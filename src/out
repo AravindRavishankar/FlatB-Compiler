@@ -1,0 +1,1 @@
+g++  -std=c++11 parser.tab.c lex.yy.c -lfl -o bcc

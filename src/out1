@@ -1,0 +1,26 @@
+; ModuleID = 'main'
+
+define internal void @main() {
+entry:
+  %a = alloca i32
+  %b = alloca i32
+  %c = alloca i32
+  store i32 2, i32* %a
+  %cmpgtmp = fcmp ugt i32* %a, i32 1
+  %booltmp = uitofp i1 %cmpgtmp to double
+  %ifcond = fcmp one double %booltmp, 0.000000e+00
+  br i1 %ifcond, label %then, label %else
+  ret void
+
+then:                                             ; preds = %entry
+  store i32 13, i32* %b
+  br label %ifcont
+
+else:                                             ; preds = %entry
+  store i32 3, i32* %b
+  br label %ifcont
+
+ifcont:                                           ; preds = %else, %then
+  %addtmp = fadd i32* %a, %b
+  store i32* %addtmp, i32* %c
+}
