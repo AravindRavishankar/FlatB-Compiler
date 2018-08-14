@@ -11,4 +11,4 @@ Used flex(for tokens), bison(for grammar) and C++ for implementation. The compil
 How to run ?
 
 Run the makefile present in the src directory on any of the ".b" files to generate the output.
-Can also use the files present in test-units for testing.
+Can also use the files present in the diractory test-units for testing.
